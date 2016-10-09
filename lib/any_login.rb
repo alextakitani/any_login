@@ -73,6 +73,13 @@ module AnyLogin
   mattr_accessor :verify_access_proc
   @@verify_access_proc = proc { |controller| true }
 
+  # Use time travel
+  mattr_accessor :time_travel
+  @@time_travel = false
+  mattr_accessor :time_travel_collection
+  @@time_travel_collection = []
+
+
   def self.setup
     yield(self)
   end
